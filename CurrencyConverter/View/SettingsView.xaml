@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="SettingsView" Height="400" Width="700" WindowStartupLocation="CenterOwner">
+        Title="Settings" Height="400" Width="700" WindowStartupLocation="CenterOwner">
     <Grid>
         <Grid Background="#FF1E3A57" Margin="10">
             <Grid.RowDefinitions>

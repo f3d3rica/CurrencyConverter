@@ -27,7 +27,6 @@ namespace CurrencyConverter.ViewModel
         public ConversionViewModel()
         {
             currencyService = ServiceLocator.Current.GetInstance<ICurrencyService>();
-            SwapCommand = new RelayCommand(SwapCurrencies);
             ShowSettingsCommand = new RelayCommand(ShowSettings);
 
             RefreshCurrencies();
@@ -101,7 +100,6 @@ namespace CurrencyConverter.ViewModel
         #endregion
 
         #region public
-        public ICommand SwapCommand { get; set; }
         public ICommand ShowSettingsCommand { get; set; }
 
         public void RefreshCurrencies()
@@ -124,13 +122,6 @@ namespace CurrencyConverter.ViewModel
 
             var rate = currencyService.GetLatestCurrencyRate(CurrencyFrom, CurrencyTo).Result;
             Result = double.Parse(Amount) * Convert.ToDouble(rate);
-        }
-
-        private void SwapCurrencies()
-        {
-            var tempCurrencyFrom = currencyFrom;
-            CurrencyFrom = CurrencyTo;
-            CurrencyTo = tempCurrencyFrom;
         }
 
         private void ShowSettings()
