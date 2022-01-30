@@ -118,10 +118,12 @@ namespace CurrencyConverter.ViewModel
 
         private void ConvertRate()
         {
+            double value;
             if (CurrencyFrom == null || CurrencyTo == null) return;
 
             var rate = currencyService.GetLatestCurrencyRate(CurrencyFrom, CurrencyTo).Result;
-            Result = double.Parse(Amount) * Convert.ToDouble(rate);
+            double.TryParse(Amount, out value);
+            Result =  value * Convert.ToDouble(rate);
         }
 
         private void ShowSettings()
