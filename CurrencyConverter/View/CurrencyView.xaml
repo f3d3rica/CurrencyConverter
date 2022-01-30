@@ -1,0 +1,38 @@
+﻿<Window x:Class="CurrencyConverter.View.CurrencyView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+        xmlns:dxl="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol"
+        mc:Ignorable="d"
+        Title="New Currency" Height="220" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterOwner">
+    <Grid >
+        <dxl:LayoutControl Name="GlobalDataLayoutControl" Margin="10" Background="#FF1E3A57">
+            <dxl:LayoutGroup Orientation="Vertical">
+                <dxl:LayoutGroup Orientation="Vertical">
+                    <dxl:LayoutItem>
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Code" Style="{StaticResource SettingsLabelStyle}"/>
+                            <dxe:ComboBoxEdit ItemsSource="{Binding Currencies}" SelectedItem="{Binding Currency}" DisplayMember="CurrencyCode" ValueMember="CurrencyCode"/>
+                        </StackPanel>
+                    </dxl:LayoutItem>
+                    <dxl:LayoutItem >
+                        <StackPanel Orientation="Vertical">
+                            <TextBlock Text="Name" Style="{StaticResource SettingsLabelStyle}"/>
+                            <dxe:TextEdit Text="{Binding Currency.CurrencyName}"/>
+                        </StackPanel>
+                    </dxl:LayoutItem>
+                </dxl:LayoutGroup>
+                <dxl:LayoutGroup Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,30,0,0">
+                    <dxl:LayoutItem>
+                        <Button Content="Save" Command="{Binding SaveCommand}" Style="{StaticResource SettingsButtonStyle}"/>
+                    </dxl:LayoutItem>
+                    <dxl:LayoutItem>
+                        <Button Content="Cancel" Command="{Binding CancelCommand}" Style="{StaticResource SettingsButtonStyle}"/>
+                    </dxl:LayoutItem>
+                </dxl:LayoutGroup>
+            </dxl:LayoutGroup>
+        </dxl:LayoutControl>
+    </Grid>
+</Window>

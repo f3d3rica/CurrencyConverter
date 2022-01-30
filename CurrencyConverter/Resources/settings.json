@@ -1,0 +1,37 @@
+[
+  {
+    "FullName": "AUD - Australian dollar",
+    "CurrencyCode": "AUD",
+    "CurrencyName": "Australian dollar"
+  },
+  {
+    "FullName": "CHF - Swiss franc",
+    "CurrencyCode": "CHF",
+    "CurrencyName": "Swiss franc"
+  },
+  {
+    "FullName": "EUR - Euro",
+    "CurrencyCode": "EUR",
+    "CurrencyName": "Euro"
+  },
+  {
+    "FullName": "RSD - Serbian dinar",
+    "CurrencyCode": "RSD",
+    "CurrencyName": "Serbian dinar"
+  },
+  {
+    "FullName": "USD - United States dollar",
+    "CurrencyCode": "USD",
+    "CurrencyName": "United States dollar"
+  },
+  {
+    "FullName": "RON - Romanian leu",
+    "CurrencyCode": "RON",
+    "CurrencyName": "Romanian leu"
+  },
+  {
+    "FullName": "GBP - Pound sterling",
+    "CurrencyCode": "GBP",
+    "CurrencyName": "Pound sterling"
+  }
+]
