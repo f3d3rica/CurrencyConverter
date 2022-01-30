@@ -15,7 +15,7 @@ namespace CurrencyConverter.ViewModel
     {
         #region fields
         private readonly ICurrencyService currencyService;
-        private double amount;
+        private string amount;
         private ObservableCollection<Currency> currenciesFrom;
         private ObservableCollection<Currency> currenciesTo;
         private Currency currencyFrom;
@@ -57,7 +57,7 @@ namespace CurrencyConverter.ViewModel
             }
         }
 
-        public double Amount
+        public string Amount
         {
             get => amount;
             set
@@ -110,7 +110,7 @@ namespace CurrencyConverter.ViewModel
             CurrenciesFrom = new ObservableCollection<Currency>(data);
             CurrenciesTo = new ObservableCollection<Currency>(data);
 
-            Amount = 0;
+            Amount = "0";
             Result = 0;
         }
 
@@ -123,7 +123,7 @@ namespace CurrencyConverter.ViewModel
             if (CurrencyFrom == null || CurrencyTo == null) return;
 
             var rate = currencyService.GetLatestCurrencyRate(CurrencyFrom, CurrencyTo).Result;
-            Result = Amount * Convert.ToDouble(rate);
+            Result = double.Parse(Amount) * Convert.ToDouble(rate);
         }
 
         private void SwapCurrencies()

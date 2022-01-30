@@ -18,8 +18,23 @@ namespace CurrencyConverter.View
 
         private void ValidateAmountInput(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9.-]+");
-            e.Handled = regex.IsMatch(e.Text);
+            int n;
+            bool isNumeric = int.TryParse(e.Text, out n);
+            if (isNumeric)
+            {
+                e.Handled = !isNumeric;
+            }
+            else
+            {
+                if(e.Text.Equals(".") && !((TextBox)sender).Text.Contains("."))
+                {
+                    e.Handled = false;
+                }
+                else
+                {
+                    e.Handled = true;
+                }
+            };
         }
     }
 }

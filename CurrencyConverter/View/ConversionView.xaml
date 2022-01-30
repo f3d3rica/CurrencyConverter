@@ -40,7 +40,7 @@
                                               ItemTemplate="{StaticResource ItemTemplate}">
                 </ComboBox>
             </StackPanel>
-            <TextBox Text="{Binding Amount, UpdateSourceTrigger=PropertyChanged}" FontSize="20" PreviewTextInput="ValidateAmountInput" Grid.Row="1" Margin="20,0,0,0"/>
+            <TextBox Text="{Binding Amount, StringFormat=N, UpdateSourceTrigger=PropertyChanged}" FontSize="20" PreviewTextInput="ValidateAmountInput" Grid.Row="1" Margin="20,0,0,0"/>
             <StackPanel Orientation="Vertical" Grid.Column="2" Margin="0,0,20,0">
                 <TextBlock Text="To:" Style="{StaticResource MainLabelStyle}" Height="50"/>
                 <ComboBox ItemsSource="{Binding CurrenciesTo}" SelectedItem="{Binding CurrencyTo, Mode=TwoWay}" IsEditable="False" Height="100"
