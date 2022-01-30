@@ -27,7 +27,7 @@
                 <TextBlock Text="Name" Style="{StaticResource SettingsLabelStyle}" Height="20"/>
                 <TextBox Text="{Binding Currency.CurrencyName}" Height="30"/>
             </StackPanel>
-            <Button Content="Save" Command="{Binding SaveCommand}" Style="{StaticResource SettingsButtonStyle}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right"/>
+            <Button Content="Add" Command="{Binding SaveCommand}" Style="{StaticResource SettingsButtonStyle}" Grid.Row="3" Grid.Column="0" HorizontalAlignment="Right"/>
             <Button Content="Cancel" Command="{Binding CancelCommand}" Style="{StaticResource SettingsButtonStyle}" Grid.Row="3" Grid.Column="2" HorizontalAlignment="Left"/>
         </Grid>
     </Grid>
